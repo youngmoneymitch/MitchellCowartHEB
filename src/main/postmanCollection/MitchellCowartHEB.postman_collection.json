@@ -1,0 +1,660 @@
+{
+	"info": {
+		"_postman_id": "2ff0835e-8d95-4d44-bb9f-984a5344e28b",
+		"name": "MitchellCowartHEB",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Happy Path",
+			"item": [
+				{
+					"name": "Subtotal Before Discounts",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test('subtotalBeforeDiscountStatusHappyPath', function(){\r",
+									"    pm.response.to.have.status(200)\r",
+									"});\r",
+									"\r",
+									"pm.test('subtotalBeforeDiscountResponseHappyPath', function(){\r",
+									"    var jsonData = pm.response.json()\r",
+									"    pm.expect(jsonData).to.equal(221.41)\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"items\": [\r\n        {\r\n            \"itemName\": \"H-E-B Two Bite Brownies\",\r\n            \"sku\": 85294241,\r\n            \"isTaxable\": false,\r\n            \"ownBrand\": true,\r\n            \"price\": 3.61\r\n        },\r\n        {\r\n            \"itemName\": \"Halo Top Vanilla Bean Ice Cream\",\r\n            \"sku\": 95422042,\r\n            \"isTaxable\": false,\r\n            \"ownBrand\": false,\r\n            \"price\": 3.31\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Select Ingredients Creamy Creations Vanilla Bean Ice Cream\",\r\n            \"sku\": 64267055,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 9.83\r\n        },\r\n        {\r\n            \"itemName\": \"Aveeno Daily Moisturizing Body Wash\",\r\n            \"sku\": 12821859,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": false,\r\n            \"price\": 5.11\r\n        },\r\n        {\r\n            \"itemName\": \"Hershey's Chocolate Syrup\",\r\n            \"sku\": 23991994,\r\n            \"isTaxable\": false,\r\n            \"ownBrand\": false,\r\n            \"price\": 9.47\r\n        },\r\n        {\r\n            \"itemName\": \"GoGo squeeZ Applesauce Pouches\",\r\n            \"sku\": 30224576,\r\n            \"isTaxable\": false,\r\n            \"ownBrand\": false,\r\n            \"price\": 7.58\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Organics Unbleached All Purpose Flour\",\r\n            \"sku\": 50338388,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 5.89\r\n        },\r\n        {\r\n            \"itemName\": \"Heritage Ranch by H-E-B Basked Pumpkin Dog Treats\",\r\n            \"sku\": 31001002,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 5.11\r\n        },\r\n        {\r\n            \"itemName\": \"KODI Red Matte Stainless Steel Low Ball Tumbler\",\r\n            \"sku\": 87467463,\r\n            \"isTaxable\": false,\r\n            \"ownBrand\": true,\r\n            \"price\": 1.5\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Artisan Yellow Cheddar Cheese\",\r\n            \"sku\": 40514710,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 11.48\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Sugar Rush Dream Melon\",\r\n            \"sku\": 56037921,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 8.4\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Chocolate Milk\",\r\n            \"sku\": 49057828,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 6.42\r\n        },\r\n        {\r\n            \"itemName\": \"Oroweat Extra Crisp Fork-Split English Muffins\",\r\n            \"sku\": 92374672,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": false,\r\n            \"price\": 2.83\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Organics Frozen Berry Blend\",\r\n            \"sku\": 73354627,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 4.77\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Select Ingredients Unsweetened Coconut Sparkling Water 12 oz Cans\",\r\n            \"sku\": 65290137,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 14.18\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Spaghetti\",\r\n            \"sku\": 30532705,\r\n            \"isTaxable\": false,\r\n            \"ownBrand\": true,\r\n            \"price\": 4.86\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Prime 1 Beef Brisket Steak Burgers, 2 ct\",\r\n            \"sku\": 29846569,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 8.65\r\n        },\r\n        {\r\n            \"itemName\": \"Tofurky\",\r\n            \"sku\": 61411728,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": false,\r\n            \"price\": 8.15\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Select Ingredients Chocolate Hummus\",\r\n            \"sku\": 58267213,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 9.29\r\n        },\r\n        {\r\n            \"itemName\": \"Heinz Tomato Ketchup\",\r\n            \"sku\": 73018836,\r\n            \"isTaxable\": false,\r\n            \"ownBrand\": false,\r\n            \"price\": 12.8\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Queso Classic, Mild\",\r\n            \"sku\": 12338101,\r\n            \"isTaxable\": false,\r\n            \"ownBrand\": true,\r\n            \"price\": 12.41\r\n        },\r\n        {\r\n            \"itemName\": \"Central Market Mild Peach Salsa\",\r\n            \"sku\": 99828459,\r\n            \"isTaxable\": false,\r\n            \"ownBrand\": true,\r\n            \"price\": 1.16\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Natural Ground Bison\",\r\n            \"sku\": 14064431,\r\n            \"isTaxable\": false,\r\n            \"ownBrand\": true,\r\n            \"price\": 12.52\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Texas Style Unsweet Tea\",\r\n            \"sku\": 77915014,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 7.04\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Original Bacon\",\r\n            \"sku\": 48067887,\r\n            \"isTaxable\": false,\r\n            \"ownBrand\": true,\r\n            \"price\": 7.15\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Cotton Swabs with Paper Sticks\",\r\n            \"sku\": 48426066,\r\n            \"isTaxable\": false,\r\n            \"ownBrand\": true,\r\n            \"price\": 9.72\r\n        },\r\n        {\r\n            \"itemName\": \"Central Market Organics Mushroom Pasta Sauce\",\r\n            \"sku\": 64474859,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 7.12\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Vegetable Medley\",\r\n            \"sku\": 11407191,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 4.81\r\n        },\r\n        {\r\n            \"itemName\": \"Beyond Meat Beyond Beef Plant Based Ground\",\r\n            \"sku\": 99657156,\r\n            \"isTaxable\": false,\r\n            \"ownBrand\": false,\r\n            \"price\": 3.81\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Wild Caught Sockeye Salmon Fillet\",\r\n            \"sku\": 75821377,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 12.43\r\n        }\r\n    ],\r\n    \"coupons\": [\r\n        {\r\n            \"couponName\": \"Brownie Discount\",\r\n            \"appliedSku\": 85294241,\r\n            \"discountPrice\": 0.79\r\n        },\r\n        {\r\n            \"couponName\": \"Tofurky Discount\",\r\n            \"appliedSku\": 61411728,\r\n            \"discountPrice\": 1.01\r\n        },\r\n        {\r\n            \"couponName\": \"Spaghetti Discount\",\r\n            \"appliedSku\": 30532705,\r\n            \"discountPrice\": 1.83\r\n        },\r\n        {\r\n            \"couponName\": \"Seafood Discount\",\r\n            \"appliedSku\": 21411389,\r\n            \"discountPrice\": 1.50\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/subtotalBeforeDiscount",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"subtotalBeforeDiscount"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Discount Total",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test('discountTotalHappyPath', function(){\r",
+									"    pm.response.to.have.status(200)\r",
+									"});\r",
+									"\r",
+									"pm.test('subtotalBeforeDiscountResponseHappyPath', function(){\r",
+									"    var jsonData = pm.response.json()\r",
+									"    pm.expect(jsonData).to.equal(3.63)\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"items\": [\r\n        {\r\n            \"itemName\": \"H-E-B Two Bite Brownies\",\r\n            \"sku\": 85294241,\r\n            \"isTaxable\": false,\r\n            \"ownBrand\": true,\r\n            \"price\": 3.61\r\n        },\r\n        {\r\n            \"itemName\": \"Halo Top Vanilla Bean Ice Cream\",\r\n            \"sku\": 95422042,\r\n            \"isTaxable\": false,\r\n            \"ownBrand\": false,\r\n            \"price\": 3.31\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Select Ingredients Creamy Creations Vanilla Bean Ice Cream\",\r\n            \"sku\": 64267055,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 9.83\r\n        },\r\n        {\r\n            \"itemName\": \"Aveeno Daily Moisturizing Body Wash\",\r\n            \"sku\": 12821859,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": false,\r\n            \"price\": 5.11\r\n        },\r\n        {\r\n            \"itemName\": \"Hershey's Chocolate Syrup\",\r\n            \"sku\": 23991994,\r\n            \"isTaxable\": false,\r\n            \"ownBrand\": false,\r\n            \"price\": 9.47\r\n        },\r\n        {\r\n            \"itemName\": \"GoGo squeeZ Applesauce Pouches\",\r\n            \"sku\": 30224576,\r\n            \"isTaxable\": false,\r\n            \"ownBrand\": false,\r\n            \"price\": 7.58\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Organics Unbleached All Purpose Flour\",\r\n            \"sku\": 50338388,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 5.89\r\n        },\r\n        {\r\n            \"itemName\": \"Heritage Ranch by H-E-B Basked Pumpkin Dog Treats\",\r\n            \"sku\": 31001002,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 5.11\r\n        },\r\n        {\r\n            \"itemName\": \"KODI Red Matte Stainless Steel Low Ball Tumbler\",\r\n            \"sku\": 87467463,\r\n            \"isTaxable\": false,\r\n            \"ownBrand\": true,\r\n            \"price\": 1.5\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Artisan Yellow Cheddar Cheese\",\r\n            \"sku\": 40514710,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 11.48\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Sugar Rush Dream Melon\",\r\n            \"sku\": 56037921,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 8.4\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Chocolate Milk\",\r\n            \"sku\": 49057828,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 6.42\r\n        },\r\n        {\r\n            \"itemName\": \"Oroweat Extra Crisp Fork-Split English Muffins\",\r\n            \"sku\": 92374672,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": false,\r\n            \"price\": 2.83\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Organics Frozen Berry Blend\",\r\n            \"sku\": 73354627,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 4.77\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Select Ingredients Unsweetened Coconut Sparkling Water 12 oz Cans\",\r\n            \"sku\": 65290137,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 14.18\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Spaghetti\",\r\n            \"sku\": 30532705,\r\n            \"isTaxable\": false,\r\n            \"ownBrand\": true,\r\n            \"price\": 4.86\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Prime 1 Beef Brisket Steak Burgers, 2 ct\",\r\n            \"sku\": 29846569,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 8.65\r\n        },\r\n        {\r\n            \"itemName\": \"Tofurky\",\r\n            \"sku\": 61411728,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": false,\r\n            \"price\": 8.15\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Select Ingredients Chocolate Hummus\",\r\n            \"sku\": 58267213,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 9.29\r\n        },\r\n        {\r\n            \"itemName\": \"Heinz Tomato Ketchup\",\r\n            \"sku\": 73018836,\r\n            \"isTaxable\": false,\r\n            \"ownBrand\": false,\r\n            \"price\": 12.8\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Queso Classic, Mild\",\r\n            \"sku\": 12338101,\r\n            \"isTaxable\": false,\r\n            \"ownBrand\": true,\r\n            \"price\": 12.41\r\n        },\r\n        {\r\n            \"itemName\": \"Central Market Mild Peach Salsa\",\r\n            \"sku\": 99828459,\r\n            \"isTaxable\": false,\r\n            \"ownBrand\": true,\r\n            \"price\": 1.16\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Natural Ground Bison\",\r\n            \"sku\": 14064431,\r\n            \"isTaxable\": false,\r\n            \"ownBrand\": true,\r\n            \"price\": 12.52\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Texas Style Unsweet Tea\",\r\n            \"sku\": 77915014,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 7.04\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Original Bacon\",\r\n            \"sku\": 48067887,\r\n            \"isTaxable\": false,\r\n            \"ownBrand\": true,\r\n            \"price\": 7.15\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Cotton Swabs with Paper Sticks\",\r\n            \"sku\": 48426066,\r\n            \"isTaxable\": false,\r\n            \"ownBrand\": true,\r\n            \"price\": 9.72\r\n        },\r\n        {\r\n            \"itemName\": \"Central Market Organics Mushroom Pasta Sauce\",\r\n            \"sku\": 64474859,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 7.12\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Vegetable Medley\",\r\n            \"sku\": 11407191,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 4.81\r\n        },\r\n        {\r\n            \"itemName\": \"Beyond Meat Beyond Beef Plant Based Ground\",\r\n            \"sku\": 99657156,\r\n            \"isTaxable\": false,\r\n            \"ownBrand\": false,\r\n            \"price\": 3.81\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Wild Caught Sockeye Salmon Fillet\",\r\n            \"sku\": 75821377,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 12.43\r\n        }\r\n    ],\r\n    \"coupons\": [\r\n        {\r\n            \"couponName\": \"Brownie Discount\",\r\n            \"appliedSku\": 85294241,\r\n            \"discountPrice\": 0.79\r\n        },\r\n        {\r\n            \"couponName\": \"Tofurky Discount\",\r\n            \"appliedSku\": 61411728,\r\n            \"discountPrice\": 1.01\r\n        },\r\n        {\r\n            \"couponName\": \"Spaghetti Discount\",\r\n            \"appliedSku\": 30532705,\r\n            \"discountPrice\": 1.83\r\n        },\r\n        {\r\n            \"couponName\": \"Seafood Discount\",\r\n            \"appliedSku\": 21411389,\r\n            \"discountPrice\": 1.50\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/discountTotal",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"discountTotal"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Subtotal After Discounts",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test('subtotalAfterDiscountStatusHappyPath', function(){\r",
+									"    pm.response.to.have.status(200)\r",
+									"});\r",
+									"\r",
+									"pm.test('subtotalAfterDiscountResponseHappyPath', function(){\r",
+									"    var jsonData = pm.response.json()\r",
+									"    pm.expect(jsonData).to.equal(217.78)\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"items\": [\r\n        {\r\n            \"itemName\": \"H-E-B Two Bite Brownies\",\r\n            \"sku\": 85294241,\r\n            \"isTaxable\": false,\r\n            \"ownBrand\": true,\r\n            \"price\": 3.61\r\n        },\r\n        {\r\n            \"itemName\": \"Halo Top Vanilla Bean Ice Cream\",\r\n            \"sku\": 95422042,\r\n            \"isTaxable\": false,\r\n            \"ownBrand\": false,\r\n            \"price\": 3.31\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Select Ingredients Creamy Creations Vanilla Bean Ice Cream\",\r\n            \"sku\": 64267055,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 9.83\r\n        },\r\n        {\r\n            \"itemName\": \"Aveeno Daily Moisturizing Body Wash\",\r\n            \"sku\": 12821859,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": false,\r\n            \"price\": 5.11\r\n        },\r\n        {\r\n            \"itemName\": \"Hershey's Chocolate Syrup\",\r\n            \"sku\": 23991994,\r\n            \"isTaxable\": false,\r\n            \"ownBrand\": false,\r\n            \"price\": 9.47\r\n        },\r\n        {\r\n            \"itemName\": \"GoGo squeeZ Applesauce Pouches\",\r\n            \"sku\": 30224576,\r\n            \"isTaxable\": false,\r\n            \"ownBrand\": false,\r\n            \"price\": 7.58\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Organics Unbleached All Purpose Flour\",\r\n            \"sku\": 50338388,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 5.89\r\n        },\r\n        {\r\n            \"itemName\": \"Heritage Ranch by H-E-B Basked Pumpkin Dog Treats\",\r\n            \"sku\": 31001002,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 5.11\r\n        },\r\n        {\r\n            \"itemName\": \"KODI Red Matte Stainless Steel Low Ball Tumbler\",\r\n            \"sku\": 87467463,\r\n            \"isTaxable\": false,\r\n            \"ownBrand\": true,\r\n            \"price\": 1.5\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Artisan Yellow Cheddar Cheese\",\r\n            \"sku\": 40514710,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 11.48\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Sugar Rush Dream Melon\",\r\n            \"sku\": 56037921,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 8.4\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Chocolate Milk\",\r\n            \"sku\": 49057828,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 6.42\r\n        },\r\n        {\r\n            \"itemName\": \"Oroweat Extra Crisp Fork-Split English Muffins\",\r\n            \"sku\": 92374672,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": false,\r\n            \"price\": 2.83\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Organics Frozen Berry Blend\",\r\n            \"sku\": 73354627,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 4.77\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Select Ingredients Unsweetened Coconut Sparkling Water 12 oz Cans\",\r\n            \"sku\": 65290137,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 14.18\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Spaghetti\",\r\n            \"sku\": 30532705,\r\n            \"isTaxable\": false,\r\n            \"ownBrand\": true,\r\n            \"price\": 4.86\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Prime 1 Beef Brisket Steak Burgers, 2 ct\",\r\n            \"sku\": 29846569,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 8.65\r\n        },\r\n        {\r\n            \"itemName\": \"Tofurky\",\r\n            \"sku\": 61411728,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": false,\r\n            \"price\": 8.15\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Select Ingredients Chocolate Hummus\",\r\n            \"sku\": 58267213,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 9.29\r\n        },\r\n        {\r\n            \"itemName\": \"Heinz Tomato Ketchup\",\r\n            \"sku\": 73018836,\r\n            \"isTaxable\": false,\r\n            \"ownBrand\": false,\r\n            \"price\": 12.8\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Queso Classic, Mild\",\r\n            \"sku\": 12338101,\r\n            \"isTaxable\": false,\r\n            \"ownBrand\": true,\r\n            \"price\": 12.41\r\n        },\r\n        {\r\n            \"itemName\": \"Central Market Mild Peach Salsa\",\r\n            \"sku\": 99828459,\r\n            \"isTaxable\": false,\r\n            \"ownBrand\": true,\r\n            \"price\": 1.16\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Natural Ground Bison\",\r\n            \"sku\": 14064431,\r\n            \"isTaxable\": false,\r\n            \"ownBrand\": true,\r\n            \"price\": 12.52\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Texas Style Unsweet Tea\",\r\n            \"sku\": 77915014,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 7.04\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Original Bacon\",\r\n            \"sku\": 48067887,\r\n            \"isTaxable\": false,\r\n            \"ownBrand\": true,\r\n            \"price\": 7.15\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Cotton Swabs with Paper Sticks\",\r\n            \"sku\": 48426066,\r\n            \"isTaxable\": false,\r\n            \"ownBrand\": true,\r\n            \"price\": 9.72\r\n        },\r\n        {\r\n            \"itemName\": \"Central Market Organics Mushroom Pasta Sauce\",\r\n            \"sku\": 64474859,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 7.12\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Vegetable Medley\",\r\n            \"sku\": 11407191,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 4.81\r\n        },\r\n        {\r\n            \"itemName\": \"Beyond Meat Beyond Beef Plant Based Ground\",\r\n            \"sku\": 99657156,\r\n            \"isTaxable\": false,\r\n            \"ownBrand\": false,\r\n            \"price\": 3.81\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Wild Caught Sockeye Salmon Fillet\",\r\n            \"sku\": 75821377,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 12.43\r\n        }\r\n    ],\r\n    \"coupons\": [\r\n        {\r\n            \"couponName\": \"Brownie Discount\",\r\n            \"appliedSku\": 85294241,\r\n            \"discountPrice\": 0.79\r\n        },\r\n        {\r\n            \"couponName\": \"Tofurky Discount\",\r\n            \"appliedSku\": 61411728,\r\n            \"discountPrice\": 1.01\r\n        },\r\n        {\r\n            \"couponName\": \"Spaghetti Discount\",\r\n            \"appliedSku\": 30532705,\r\n            \"discountPrice\": 1.83\r\n        },\r\n        {\r\n            \"couponName\": \"Seafood Discount\",\r\n            \"appliedSku\": 21411389,\r\n            \"discountPrice\": 1.50\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/subtotalAfterDiscount",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"subtotalAfterDiscount"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Taxable Subtotal After Discounts",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test('TaxableSubtotalAfterDiscountStatusHappyPath', function(){\r",
+									"    pm.response.to.have.status(200)\r",
+									"});\r",
+									"\r",
+									"pm.test('TaxableSubtotalAfterDiscountResponseHappyPath', function(){\r",
+									"    var jsonData = pm.response.json()\r",
+									"    pm.expect(jsonData).to.equal(131.51)\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"items\": [\r\n        {\r\n            \"itemName\": \"H-E-B Two Bite Brownies\",\r\n            \"sku\": 85294241,\r\n            \"isTaxable\": false,\r\n            \"ownBrand\": true,\r\n            \"price\": 3.61\r\n        },\r\n        {\r\n            \"itemName\": \"Halo Top Vanilla Bean Ice Cream\",\r\n            \"sku\": 95422042,\r\n            \"isTaxable\": false,\r\n            \"ownBrand\": false,\r\n            \"price\": 3.31\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Select Ingredients Creamy Creations Vanilla Bean Ice Cream\",\r\n            \"sku\": 64267055,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 9.83\r\n        },\r\n        {\r\n            \"itemName\": \"Aveeno Daily Moisturizing Body Wash\",\r\n            \"sku\": 12821859,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": false,\r\n            \"price\": 5.11\r\n        },\r\n        {\r\n            \"itemName\": \"Hershey's Chocolate Syrup\",\r\n            \"sku\": 23991994,\r\n            \"isTaxable\": false,\r\n            \"ownBrand\": false,\r\n            \"price\": 9.47\r\n        },\r\n        {\r\n            \"itemName\": \"GoGo squeeZ Applesauce Pouches\",\r\n            \"sku\": 30224576,\r\n            \"isTaxable\": false,\r\n            \"ownBrand\": false,\r\n            \"price\": 7.58\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Organics Unbleached All Purpose Flour\",\r\n            \"sku\": 50338388,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 5.89\r\n        },\r\n        {\r\n            \"itemName\": \"Heritage Ranch by H-E-B Basked Pumpkin Dog Treats\",\r\n            \"sku\": 31001002,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 5.11\r\n        },\r\n        {\r\n            \"itemName\": \"KODI Red Matte Stainless Steel Low Ball Tumbler\",\r\n            \"sku\": 87467463,\r\n            \"isTaxable\": false,\r\n            \"ownBrand\": true,\r\n            \"price\": 1.5\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Artisan Yellow Cheddar Cheese\",\r\n            \"sku\": 40514710,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 11.48\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Sugar Rush Dream Melon\",\r\n            \"sku\": 56037921,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 8.4\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Chocolate Milk\",\r\n            \"sku\": 49057828,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 6.42\r\n        },\r\n        {\r\n            \"itemName\": \"Oroweat Extra Crisp Fork-Split English Muffins\",\r\n            \"sku\": 92374672,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": false,\r\n            \"price\": 2.83\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Organics Frozen Berry Blend\",\r\n            \"sku\": 73354627,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 4.77\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Select Ingredients Unsweetened Coconut Sparkling Water 12 oz Cans\",\r\n            \"sku\": 65290137,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 14.18\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Spaghetti\",\r\n            \"sku\": 30532705,\r\n            \"isTaxable\": false,\r\n            \"ownBrand\": true,\r\n            \"price\": 4.86\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Prime 1 Beef Brisket Steak Burgers, 2 ct\",\r\n            \"sku\": 29846569,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 8.65\r\n        },\r\n        {\r\n            \"itemName\": \"Tofurky\",\r\n            \"sku\": 61411728,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": false,\r\n            \"price\": 8.15\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Select Ingredients Chocolate Hummus\",\r\n            \"sku\": 58267213,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 9.29\r\n        },\r\n        {\r\n            \"itemName\": \"Heinz Tomato Ketchup\",\r\n            \"sku\": 73018836,\r\n            \"isTaxable\": false,\r\n            \"ownBrand\": false,\r\n            \"price\": 12.8\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Queso Classic, Mild\",\r\n            \"sku\": 12338101,\r\n            \"isTaxable\": false,\r\n            \"ownBrand\": true,\r\n            \"price\": 12.41\r\n        },\r\n        {\r\n            \"itemName\": \"Central Market Mild Peach Salsa\",\r\n            \"sku\": 99828459,\r\n            \"isTaxable\": false,\r\n            \"ownBrand\": true,\r\n            \"price\": 1.16\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Natural Ground Bison\",\r\n            \"sku\": 14064431,\r\n            \"isTaxable\": false,\r\n            \"ownBrand\": true,\r\n            \"price\": 12.52\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Texas Style Unsweet Tea\",\r\n            \"sku\": 77915014,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 7.04\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Original Bacon\",\r\n            \"sku\": 48067887,\r\n            \"isTaxable\": false,\r\n            \"ownBrand\": true,\r\n            \"price\": 7.15\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Cotton Swabs with Paper Sticks\",\r\n            \"sku\": 48426066,\r\n            \"isTaxable\": false,\r\n            \"ownBrand\": true,\r\n            \"price\": 9.72\r\n        },\r\n        {\r\n            \"itemName\": \"Central Market Organics Mushroom Pasta Sauce\",\r\n            \"sku\": 64474859,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 7.12\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Vegetable Medley\",\r\n            \"sku\": 11407191,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 4.81\r\n        },\r\n        {\r\n            \"itemName\": \"Beyond Meat Beyond Beef Plant Based Ground\",\r\n            \"sku\": 99657156,\r\n            \"isTaxable\": false,\r\n            \"ownBrand\": false,\r\n            \"price\": 3.81\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Wild Caught Sockeye Salmon Fillet\",\r\n            \"sku\": 75821377,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 12.43\r\n        }\r\n    ],\r\n    \"coupons\": [\r\n        {\r\n            \"couponName\": \"Brownie Discount\",\r\n            \"appliedSku\": 85294241,\r\n            \"discountPrice\": 0.79\r\n        },\r\n        {\r\n            \"couponName\": \"Tofurky Discount\",\r\n            \"appliedSku\": 61411728,\r\n            \"discountPrice\": 1.01\r\n        },\r\n        {\r\n            \"couponName\": \"Spaghetti Discount\",\r\n            \"appliedSku\": 30532705,\r\n            \"discountPrice\": 1.83\r\n        },\r\n        {\r\n            \"couponName\": \"Seafood Discount\",\r\n            \"appliedSku\": 21411389,\r\n            \"discountPrice\": 1.50\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/taxableSubtotalAfterDiscount",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"taxableSubtotalAfterDiscount"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Tax Total",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test('taxTotalStatusHappyPath', function(){\r",
+									"    pm.response.to.have.status(200)\r",
+									"});\r",
+									"\r",
+									"pm.test('taxTotalResponseHappyPath', function(){\r",
+									"    var jsonData = pm.response.json()\r",
+									"    pm.expect(jsonData).to.equal(8.25)\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/taxTotal/100",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"taxTotal",
+								"100"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Grand Total",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test('grandTotalStatusHappyPath', function(){\r",
+									"    pm.response.to.have.status(200)\r",
+									"});\r",
+									"\r",
+									"pm.test('grandTotalResponseHappyPath', function(){\r",
+									"    var jsonData = pm.response.json()\r",
+									"    pm.expect(jsonData).to.equal(206.930425)\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"items\": [\r\n        {\r\n            \"itemName\": \"H-E-B Two Bite Brownies\",\r\n            \"sku\": 85294241,\r\n            \"isTaxable\": false,\r\n            \"ownBrand\": true,\r\n            \"price\": 3.61\r\n        },\r\n        {\r\n            \"itemName\": \"Halo Top Vanilla Bean Ice Cream\",\r\n            \"sku\": 95422042,\r\n            \"isTaxable\": false,\r\n            \"ownBrand\": false,\r\n            \"price\": 3.31\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Select Ingredients Creamy Creations Vanilla Bean Ice Cream\",\r\n            \"sku\": 64267055,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 9.83\r\n        },\r\n        {\r\n            \"itemName\": \"Aveeno Daily Moisturizing Body Wash\",\r\n            \"sku\": 12821859,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": false,\r\n            \"price\": 5.11\r\n        },\r\n        {\r\n            \"itemName\": \"Hershey's Chocolate Syrup\",\r\n            \"sku\": 23991994,\r\n            \"isTaxable\": false,\r\n            \"ownBrand\": false,\r\n            \"price\": 9.47\r\n        },\r\n        {\r\n            \"itemName\": \"GoGo squeeZ Applesauce Pouches\",\r\n            \"sku\": 30224576,\r\n            \"isTaxable\": false,\r\n            \"ownBrand\": false,\r\n            \"price\": 7.58\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Organics Unbleached All Purpose Flour\",\r\n            \"sku\": 50338388,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 5.89\r\n        },\r\n        {\r\n            \"itemName\": \"Heritage Ranch by H-E-B Basked Pumpkin Dog Treats\",\r\n            \"sku\": 31001002,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 5.11\r\n        },\r\n        {\r\n            \"itemName\": \"KODI Red Matte Stainless Steel Low Ball Tumbler\",\r\n            \"sku\": 87467463,\r\n            \"isTaxable\": false,\r\n            \"ownBrand\": true,\r\n            \"price\": 1.5\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Artisan Yellow Cheddar Cheese\",\r\n            \"sku\": 40514710,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 11.48\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Sugar Rush Dream Melon\",\r\n            \"sku\": 56037921,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 8.4\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Chocolate Milk\",\r\n            \"sku\": 49057828,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 6.42\r\n        },\r\n        {\r\n            \"itemName\": \"Oroweat Extra Crisp Fork-Split English Muffins\",\r\n            \"sku\": 92374672,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": false,\r\n            \"price\": 2.83\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Organics Frozen Berry Blend\",\r\n            \"sku\": 73354627,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 4.77\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Select Ingredients Unsweetened Coconut Sparkling Water 12 oz Cans\",\r\n            \"sku\": 65290137,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 14.18\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Spaghetti\",\r\n            \"sku\": 30532705,\r\n            \"isTaxable\": false,\r\n            \"ownBrand\": true,\r\n            \"price\": 4.86\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Prime 1 Beef Brisket Steak Burgers, 2 ct\",\r\n            \"sku\": 29846569,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 8.65\r\n        },\r\n        {\r\n            \"itemName\": \"Tofurky\",\r\n            \"sku\": 61411728,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": false,\r\n            \"price\": 8.15\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Select Ingredients Chocolate Hummus\",\r\n            \"sku\": 58267213,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 9.29\r\n        },\r\n        {\r\n            \"itemName\": \"Heinz Tomato Ketchup\",\r\n            \"sku\": 73018836,\r\n            \"isTaxable\": false,\r\n            \"ownBrand\": false,\r\n            \"price\": 12.8\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Queso Classic, Mild\",\r\n            \"sku\": 12338101,\r\n            \"isTaxable\": false,\r\n            \"ownBrand\": true,\r\n            \"price\": 12.41\r\n        },\r\n        {\r\n            \"itemName\": \"Central Market Mild Peach Salsa\",\r\n            \"sku\": 99828459,\r\n            \"isTaxable\": false,\r\n            \"ownBrand\": true,\r\n            \"price\": 1.16\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Natural Ground Bison\",\r\n            \"sku\": 14064431,\r\n            \"isTaxable\": false,\r\n            \"ownBrand\": true,\r\n            \"price\": 12.52\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Texas Style Unsweet Tea\",\r\n            \"sku\": 77915014,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 7.04\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Original Bacon\",\r\n            \"sku\": 48067887,\r\n            \"isTaxable\": false,\r\n            \"ownBrand\": true,\r\n            \"price\": 7.15\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Cotton Swabs with Paper Sticks\",\r\n            \"sku\": 48426066,\r\n            \"isTaxable\": false,\r\n            \"ownBrand\": true,\r\n            \"price\": 9.72\r\n        },\r\n        {\r\n            \"itemName\": \"Central Market Organics Mushroom Pasta Sauce\",\r\n            \"sku\": 64474859,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 7.12\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Vegetable Medley\",\r\n            \"sku\": 11407191,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 4.81\r\n        },\r\n        {\r\n            \"itemName\": \"Beyond Meat Beyond Beef Plant Based Ground\",\r\n            \"sku\": 99657156,\r\n            \"isTaxable\": false,\r\n            \"ownBrand\": false,\r\n            \"price\": 3.81\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Wild Caught Sockeye Salmon Fillet\",\r\n            \"sku\": 75821377,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 12.43\r\n        }\r\n    ],\r\n    \"coupons\": [\r\n        {\r\n            \"couponName\": \"Brownie Discount\",\r\n            \"appliedSku\": 85294241,\r\n            \"discountPrice\": 0.79\r\n        },\r\n        {\r\n            \"couponName\": \"Tofurky Discount\",\r\n            \"appliedSku\": 61411728,\r\n            \"discountPrice\": 1.01\r\n        },\r\n        {\r\n            \"couponName\": \"Spaghetti Discount\",\r\n            \"appliedSku\": 30532705,\r\n            \"discountPrice\": 1.83\r\n        },\r\n        {\r\n            \"couponName\": \"Seafood Discount\",\r\n            \"appliedSku\": 21411389,\r\n            \"discountPrice\": 1.50\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/grandTotal",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"grandTotal"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Receipt",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test('receiptStatusHappyPath', function(){\r",
+									"    pm.response.to.have.status(200)\r",
+									"});\r",
+									"\r",
+									"pm.test('receiptResponseHappyPath', function(){\r",
+									"    var jsonData = pm.response.json()\r",
+									"    pm.expect(jsonData.subtotalBeforeDiscounts === 221.41)\r",
+									"    pm.expect(jsonData.discountTotal === 3.63)\r",
+									"    pm.expect(jsonData.subtotalAfterDiscounts === 217.78)\r",
+									"    pm.expect(jsonData.taxableSubtotalAfterDiscounts === 131.51)\r",
+									"    pm.expect(jsonData.taxTotal === 10.85)\r",
+									"    pm.expect(jsonData.grandTotal === 206.93)\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"items\": [\r\n        {\r\n            \"itemName\": \"H-E-B Two Bite Brownies\",\r\n            \"sku\": 85294241,\r\n            \"isTaxable\": false,\r\n            \"ownBrand\": true,\r\n            \"price\": 3.61\r\n        },\r\n        {\r\n            \"itemName\": \"Halo Top Vanilla Bean Ice Cream\",\r\n            \"sku\": 95422042,\r\n            \"isTaxable\": false,\r\n            \"ownBrand\": false,\r\n            \"price\": 3.31\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Select Ingredients Creamy Creations Vanilla Bean Ice Cream\",\r\n            \"sku\": 64267055,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 9.83\r\n        },\r\n        {\r\n            \"itemName\": \"Aveeno Daily Moisturizing Body Wash\",\r\n            \"sku\": 12821859,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": false,\r\n            \"price\": 5.11\r\n        },\r\n        {\r\n            \"itemName\": \"Hershey's Chocolate Syrup\",\r\n            \"sku\": 23991994,\r\n            \"isTaxable\": false,\r\n            \"ownBrand\": false,\r\n            \"price\": 9.47\r\n        },\r\n        {\r\n            \"itemName\": \"GoGo squeeZ Applesauce Pouches\",\r\n            \"sku\": 30224576,\r\n            \"isTaxable\": false,\r\n            \"ownBrand\": false,\r\n            \"price\": 7.58\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Organics Unbleached All Purpose Flour\",\r\n            \"sku\": 50338388,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 5.89\r\n        },\r\n        {\r\n            \"itemName\": \"Heritage Ranch by H-E-B Basked Pumpkin Dog Treats\",\r\n            \"sku\": 31001002,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 5.11\r\n        },\r\n        {\r\n            \"itemName\": \"KODI Red Matte Stainless Steel Low Ball Tumbler\",\r\n            \"sku\": 87467463,\r\n            \"isTaxable\": false,\r\n            \"ownBrand\": true,\r\n            \"price\": 1.5\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Artisan Yellow Cheddar Cheese\",\r\n            \"sku\": 40514710,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 11.48\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Sugar Rush Dream Melon\",\r\n            \"sku\": 56037921,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 8.4\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Chocolate Milk\",\r\n            \"sku\": 49057828,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 6.42\r\n        },\r\n        {\r\n            \"itemName\": \"Oroweat Extra Crisp Fork-Split English Muffins\",\r\n            \"sku\": 92374672,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": false,\r\n            \"price\": 2.83\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Organics Frozen Berry Blend\",\r\n            \"sku\": 73354627,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 4.77\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Select Ingredients Unsweetened Coconut Sparkling Water 12 oz Cans\",\r\n            \"sku\": 65290137,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 14.18\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Spaghetti\",\r\n            \"sku\": 30532705,\r\n            \"isTaxable\": false,\r\n            \"ownBrand\": true,\r\n            \"price\": 4.86\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Prime 1 Beef Brisket Steak Burgers, 2 ct\",\r\n            \"sku\": 29846569,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 8.65\r\n        },\r\n        {\r\n            \"itemName\": \"Tofurky\",\r\n            \"sku\": 61411728,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": false,\r\n            \"price\": 8.15\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Select Ingredients Chocolate Hummus\",\r\n            \"sku\": 58267213,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 9.29\r\n        },\r\n        {\r\n            \"itemName\": \"Heinz Tomato Ketchup\",\r\n            \"sku\": 73018836,\r\n            \"isTaxable\": false,\r\n            \"ownBrand\": false,\r\n            \"price\": 12.8\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Queso Classic, Mild\",\r\n            \"sku\": 12338101,\r\n            \"isTaxable\": false,\r\n            \"ownBrand\": true,\r\n            \"price\": 12.41\r\n        },\r\n        {\r\n            \"itemName\": \"Central Market Mild Peach Salsa\",\r\n            \"sku\": 99828459,\r\n            \"isTaxable\": false,\r\n            \"ownBrand\": true,\r\n            \"price\": 1.16\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Natural Ground Bison\",\r\n            \"sku\": 14064431,\r\n            \"isTaxable\": false,\r\n            \"ownBrand\": true,\r\n            \"price\": 12.52\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Texas Style Unsweet Tea\",\r\n            \"sku\": 77915014,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 7.04\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Original Bacon\",\r\n            \"sku\": 48067887,\r\n            \"isTaxable\": false,\r\n            \"ownBrand\": true,\r\n            \"price\": 7.15\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Cotton Swabs with Paper Sticks\",\r\n            \"sku\": 48426066,\r\n            \"isTaxable\": false,\r\n            \"ownBrand\": true,\r\n            \"price\": 9.72\r\n        },\r\n        {\r\n            \"itemName\": \"Central Market Organics Mushroom Pasta Sauce\",\r\n            \"sku\": 64474859,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 7.12\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Vegetable Medley\",\r\n            \"sku\": 11407191,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 4.81\r\n        },\r\n        {\r\n            \"itemName\": \"Beyond Meat Beyond Beef Plant Based Ground\",\r\n            \"sku\": 99657156,\r\n            \"isTaxable\": false,\r\n            \"ownBrand\": false,\r\n            \"price\": 3.81\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Wild Caught Sockeye Salmon Fillet\",\r\n            \"sku\": 75821377,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 12.43\r\n        }\r\n    ],\r\n    \"coupons\": [\r\n        {\r\n            \"couponName\": \"Brownie Discount\",\r\n            \"appliedSku\": 85294241,\r\n            \"discountPrice\": 0.79\r\n        },\r\n        {\r\n            \"couponName\": \"Tofurky Discount\",\r\n            \"appliedSku\": 61411728,\r\n            \"discountPrice\": 1.01\r\n        },\r\n        {\r\n            \"couponName\": \"Spaghetti Discount\",\r\n            \"appliedSku\": 30532705,\r\n            \"discountPrice\": 1.83\r\n        },\r\n        {\r\n            \"couponName\": \"Seafood Discount\",\r\n            \"appliedSku\": 21411389,\r\n            \"discountPrice\": 1.50\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Unhappy paths",
+			"item": [
+				{
+					"name": "Subtotal Before Discounts Fail",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test('subtotalBeforeDiscountStatusSadPath', function(){\r",
+									"    pm.response.to.have.status(400)\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test('subtotalBeforeDiscountResponseSadPath', function(){\r",
+									"    var jsonData = pm.response.json()\r",
+									"    pm.expect(jsonData.detail).to.equal(\"Invalid request content.\")\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"items\": [\r\n        {\r\n            \"price\": 3.61\r\n        },\r\n        {\r\n            \"itemName\": \"Halo Top Vanilla Bean Ice Cream\",\r\n            \"sku\": 95422042,\r\n            \"isTaxable\": false,\r\n            \"ownBrand\": false,\r\n            \"price\": 3.31\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Select Ingredients Creamy Creations Vanilla Bean Ice Cream\",\r\n            \"sku\": 64267055,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 9.83\r\n        },\r\n        {\r\n            \"itemName\": \"Aveeno Daily Moisturizing Body Wash\",\r\n            \"sku\": 12821859,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": false,\r\n            \"price\": 5.11\r\n        },\r\n        {\r\n            \"itemName\": \"Hershey's Chocolate Syrup\",\r\n            \"sku\": 23991994,\r\n            \"isTaxable\": false,\r\n            \"ownBrand\": false,\r\n            \"price\": 9.47\r\n        },\r\n        {\r\n            \"itemName\": \"GoGo squeeZ Applesauce Pouches\",\r\n            \"sku\": 30224576,\r\n            \"isTaxable\": false,\r\n            \"ownBrand\": false,\r\n            \"price\": 7.58\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Organics Unbleached All Purpose Flour\",\r\n            \"sku\": 50338388,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 5.89\r\n        },\r\n        {\r\n            \"itemName\": \"Heritage Ranch by H-E-B Basked Pumpkin Dog Treats\",\r\n            \"sku\": 31001002,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 5.11\r\n        },\r\n        {\r\n            \"itemName\": \"KODI Red Matte Stainless Steel Low Ball Tumbler\",\r\n            \"sku\": 87467463,\r\n            \"isTaxable\": false,\r\n            \"ownBrand\": true,\r\n            \"price\": 1.5\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Artisan Yellow Cheddar Cheese\",\r\n            \"sku\": 40514710,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 11.48\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Sugar Rush Dream Melon\",\r\n            \"sku\": 56037921,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 8.4\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Chocolate Milk\",\r\n            \"sku\": 49057828,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 6.42\r\n        },\r\n        {\r\n            \"itemName\": \"Oroweat Extra Crisp Fork-Split English Muffins\",\r\n            \"sku\": 92374672,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": false,\r\n            \"price\": 2.83\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Organics Frozen Berry Blend\",\r\n            \"sku\": 73354627,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 4.77\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Select Ingredients Unsweetened Coconut Sparkling Water 12 oz Cans\",\r\n            \"sku\": 65290137,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 14.18\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Spaghetti\",\r\n            \"sku\": 30532705,\r\n            \"isTaxable\": false,\r\n            \"ownBrand\": true,\r\n            \"price\": 4.86\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Prime 1 Beef Brisket Steak Burgers, 2 ct\",\r\n            \"sku\": 29846569,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 8.65\r\n        },\r\n        {\r\n            \"itemName\": \"Tofurky\",\r\n            \"sku\": 61411728,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": false,\r\n            \"price\": 8.15\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Select Ingredients Chocolate Hummus\",\r\n            \"sku\": 58267213,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 9.29\r\n        },\r\n        {\r\n            \"itemName\": \"Heinz Tomato Ketchup\",\r\n            \"sku\": 73018836,\r\n            \"isTaxable\": false,\r\n            \"ownBrand\": false,\r\n            \"price\": 12.8\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Queso Classic, Mild\",\r\n            \"sku\": 12338101,\r\n            \"isTaxable\": false,\r\n            \"ownBrand\": true,\r\n            \"price\": 12.41\r\n        },\r\n        {\r\n            \"itemName\": \"Central Market Mild Peach Salsa\",\r\n            \"sku\": 99828459,\r\n            \"isTaxable\": false,\r\n            \"ownBrand\": true,\r\n            \"price\": 1.16\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Natural Ground Bison\",\r\n            \"sku\": 14064431,\r\n            \"isTaxable\": false,\r\n            \"ownBrand\": true,\r\n            \"price\": 12.52\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Texas Style Unsweet Tea\",\r\n            \"sku\": 77915014,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 7.04\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Original Bacon\",\r\n            \"sku\": 48067887,\r\n            \"isTaxable\": false,\r\n            \"ownBrand\": true,\r\n            \"price\": 7.15\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Cotton Swabs with Paper Sticks\",\r\n            \"sku\": 48426066,\r\n            \"isTaxable\": false,\r\n            \"ownBrand\": true,\r\n            \"price\": 9.72\r\n        },\r\n        {\r\n            \"itemName\": \"Central Market Organics Mushroom Pasta Sauce\",\r\n            \"sku\": 64474859,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 7.12\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Vegetable Medley\",\r\n            \"sku\": 11407191,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 4.81\r\n        },\r\n        {\r\n            \"itemName\": \"Beyond Meat Beyond Beef Plant Based Ground\",\r\n            \"sku\": 99657156,\r\n            \"isTaxable\": false,\r\n            \"ownBrand\": false,\r\n            \"price\": 3.81\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Wild Caught Sockeye Salmon Fillet\",\r\n            \"sku\": 75821377,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 12.43\r\n        }\r\n    ],\r\n    \"coupons\": [\r\n        {\r\n            \"couponName\": \"Brownie Discount\",\r\n            \"appliedSku\": 85294241,\r\n            \"discountPrice\": 0.79\r\n        },\r\n        {\r\n            \"couponName\": \"Tofurky Discount\",\r\n            \"appliedSku\": 61411728,\r\n            \"discountPrice\": 1.01\r\n        },\r\n        {\r\n            \"couponName\": \"Spaghetti Discount\",\r\n            \"appliedSku\": 30532705,\r\n            \"discountPrice\": 1.83\r\n        },\r\n        {\r\n            \"couponName\": \"Seafood Discount\",\r\n            \"appliedSku\": 21411389,\r\n            \"discountPrice\": 1.50\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/subtotalBeforeDiscount",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"subtotalBeforeDiscount"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Discount Total Fail",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test('discountTotalStatusSadPath', function(){\r",
+									"    pm.response.to.have.status(400)\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test('discountTotalResponseSadPath', function(){\r",
+									"    var jsonData = pm.response.json()\r",
+									"    pm.expect(jsonData.detail).to.equal(\"Invalid request content.\")\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"items\": [\r\n        {\r\n            \"price\": 3.61\r\n        },\r\n        {\r\n            \"itemName\": \"Halo Top Vanilla Bean Ice Cream\",\r\n            \"sku\": 95422042,\r\n            \"isTaxable\": false,\r\n            \"ownBrand\": false,\r\n            \"price\": 3.31\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Select Ingredients Creamy Creations Vanilla Bean Ice Cream\",\r\n            \"sku\": 64267055,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 9.83\r\n        },\r\n        {\r\n            \"itemName\": \"Aveeno Daily Moisturizing Body Wash\",\r\n            \"sku\": 12821859,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": false,\r\n            \"price\": 5.11\r\n        },\r\n        {\r\n            \"itemName\": \"Hershey's Chocolate Syrup\",\r\n            \"sku\": 23991994,\r\n            \"isTaxable\": false,\r\n            \"ownBrand\": false,\r\n            \"price\": 9.47\r\n        },\r\n        {\r\n            \"itemName\": \"GoGo squeeZ Applesauce Pouches\",\r\n            \"sku\": 30224576,\r\n            \"isTaxable\": false,\r\n            \"ownBrand\": false,\r\n            \"price\": 7.58\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Organics Unbleached All Purpose Flour\",\r\n            \"sku\": 50338388,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 5.89\r\n        },\r\n        {\r\n            \"itemName\": \"Heritage Ranch by H-E-B Basked Pumpkin Dog Treats\",\r\n            \"sku\": 31001002,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 5.11\r\n        },\r\n        {\r\n            \"itemName\": \"KODI Red Matte Stainless Steel Low Ball Tumbler\",\r\n            \"sku\": 87467463,\r\n            \"isTaxable\": false,\r\n            \"ownBrand\": true,\r\n            \"price\": 1.5\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Artisan Yellow Cheddar Cheese\",\r\n            \"sku\": 40514710,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 11.48\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Sugar Rush Dream Melon\",\r\n            \"sku\": 56037921,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 8.4\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Chocolate Milk\",\r\n            \"sku\": 49057828,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 6.42\r\n        },\r\n        {\r\n            \"itemName\": \"Oroweat Extra Crisp Fork-Split English Muffins\",\r\n            \"sku\": 92374672,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": false,\r\n            \"price\": 2.83\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Organics Frozen Berry Blend\",\r\n            \"sku\": 73354627,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 4.77\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Select Ingredients Unsweetened Coconut Sparkling Water 12 oz Cans\",\r\n            \"sku\": 65290137,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 14.18\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Spaghetti\",\r\n            \"sku\": 30532705,\r\n            \"isTaxable\": false,\r\n            \"ownBrand\": true,\r\n            \"price\": 4.86\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Prime 1 Beef Brisket Steak Burgers, 2 ct\",\r\n            \"sku\": 29846569,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 8.65\r\n        },\r\n        {\r\n            \"itemName\": \"Tofurky\",\r\n            \"sku\": 61411728,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": false,\r\n            \"price\": 8.15\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Select Ingredients Chocolate Hummus\",\r\n            \"sku\": 58267213,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 9.29\r\n        },\r\n        {\r\n            \"itemName\": \"Heinz Tomato Ketchup\",\r\n            \"sku\": 73018836,\r\n            \"isTaxable\": false,\r\n            \"ownBrand\": false,\r\n            \"price\": 12.8\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Queso Classic, Mild\",\r\n            \"sku\": 12338101,\r\n            \"isTaxable\": false,\r\n            \"ownBrand\": true,\r\n            \"price\": 12.41\r\n        },\r\n        {\r\n            \"itemName\": \"Central Market Mild Peach Salsa\",\r\n            \"sku\": 99828459,\r\n            \"isTaxable\": false,\r\n            \"ownBrand\": true,\r\n            \"price\": 1.16\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Natural Ground Bison\",\r\n            \"sku\": 14064431,\r\n            \"isTaxable\": false,\r\n            \"ownBrand\": true,\r\n            \"price\": 12.52\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Texas Style Unsweet Tea\",\r\n            \"sku\": 77915014,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 7.04\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Original Bacon\",\r\n            \"sku\": 48067887,\r\n            \"isTaxable\": false,\r\n            \"ownBrand\": true,\r\n            \"price\": 7.15\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Cotton Swabs with Paper Sticks\",\r\n            \"sku\": 48426066,\r\n            \"isTaxable\": false,\r\n            \"ownBrand\": true,\r\n            \"price\": 9.72\r\n        },\r\n        {\r\n            \"itemName\": \"Central Market Organics Mushroom Pasta Sauce\",\r\n            \"sku\": 64474859,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 7.12\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Vegetable Medley\",\r\n            \"sku\": 11407191,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 4.81\r\n        },\r\n        {\r\n            \"itemName\": \"Beyond Meat Beyond Beef Plant Based Ground\",\r\n            \"sku\": 99657156,\r\n            \"isTaxable\": false,\r\n            \"ownBrand\": false,\r\n            \"price\": 3.81\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Wild Caught Sockeye Salmon Fillet\",\r\n            \"sku\": 75821377,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 12.43\r\n        }\r\n    ],\r\n    \"coupons\": [\r\n        {\r\n            \"couponName\": \"Brownie Discount\",\r\n            \"appliedSku\": 85294241,\r\n            \"discountPrice\": 0.79\r\n        },\r\n        {\r\n            \"couponName\": \"Tofurky Discount\",\r\n            \"appliedSku\": 61411728,\r\n            \"discountPrice\": 1.01\r\n        },\r\n        {\r\n            \"couponName\": \"Spaghetti Discount\",\r\n            \"appliedSku\": 30532705,\r\n            \"discountPrice\": 1.83\r\n        },\r\n        {\r\n            \"couponName\": \"Seafood Discount\",\r\n            \"appliedSku\": 21411389,\r\n            \"discountPrice\": 1.50\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/discountTotal",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"discountTotal"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Subtotal After Discounts Fail",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test('subtotalAfterDiscountStatusSadPath', function(){\r",
+									"    pm.response.to.have.status(400)\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test('subtotalAfterDiscountResponseSadPath', function(){\r",
+									"    var jsonData = pm.response.json()\r",
+									"    pm.expect(jsonData.detail).to.equal(\"Invalid request content.\")\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"items\": [\r\n        {\r\n            \"price\": 3.61\r\n        },\r\n        {\r\n            \"itemName\": \"Halo Top Vanilla Bean Ice Cream\",\r\n            \"sku\": 95422042,\r\n            \"isTaxable\": false,\r\n            \"ownBrand\": false,\r\n            \"price\": 3.31\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Select Ingredients Creamy Creations Vanilla Bean Ice Cream\",\r\n            \"sku\": 64267055,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 9.83\r\n        },\r\n        {\r\n            \"itemName\": \"Aveeno Daily Moisturizing Body Wash\",\r\n            \"sku\": 12821859,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": false,\r\n            \"price\": 5.11\r\n        },\r\n        {\r\n            \"itemName\": \"Hershey's Chocolate Syrup\",\r\n            \"sku\": 23991994,\r\n            \"isTaxable\": false,\r\n            \"ownBrand\": false,\r\n            \"price\": 9.47\r\n        },\r\n        {\r\n            \"itemName\": \"GoGo squeeZ Applesauce Pouches\",\r\n            \"sku\": 30224576,\r\n            \"isTaxable\": false,\r\n            \"ownBrand\": false,\r\n            \"price\": 7.58\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Organics Unbleached All Purpose Flour\",\r\n            \"sku\": 50338388,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 5.89\r\n        },\r\n        {\r\n            \"itemName\": \"Heritage Ranch by H-E-B Basked Pumpkin Dog Treats\",\r\n            \"sku\": 31001002,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 5.11\r\n        },\r\n        {\r\n            \"itemName\": \"KODI Red Matte Stainless Steel Low Ball Tumbler\",\r\n            \"sku\": 87467463,\r\n            \"isTaxable\": false,\r\n            \"ownBrand\": true,\r\n            \"price\": 1.5\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Artisan Yellow Cheddar Cheese\",\r\n            \"sku\": 40514710,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 11.48\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Sugar Rush Dream Melon\",\r\n            \"sku\": 56037921,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 8.4\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Chocolate Milk\",\r\n            \"sku\": 49057828,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 6.42\r\n        },\r\n        {\r\n            \"itemName\": \"Oroweat Extra Crisp Fork-Split English Muffins\",\r\n            \"sku\": 92374672,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": false,\r\n            \"price\": 2.83\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Organics Frozen Berry Blend\",\r\n            \"sku\": 73354627,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 4.77\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Select Ingredients Unsweetened Coconut Sparkling Water 12 oz Cans\",\r\n            \"sku\": 65290137,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 14.18\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Spaghetti\",\r\n            \"sku\": 30532705,\r\n            \"isTaxable\": false,\r\n            \"ownBrand\": true,\r\n            \"price\": 4.86\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Prime 1 Beef Brisket Steak Burgers, 2 ct\",\r\n            \"sku\": 29846569,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 8.65\r\n        },\r\n        {\r\n            \"itemName\": \"Tofurky\",\r\n            \"sku\": 61411728,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": false,\r\n            \"price\": 8.15\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Select Ingredients Chocolate Hummus\",\r\n            \"sku\": 58267213,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 9.29\r\n        },\r\n        {\r\n            \"itemName\": \"Heinz Tomato Ketchup\",\r\n            \"sku\": 73018836,\r\n            \"isTaxable\": false,\r\n            \"ownBrand\": false,\r\n            \"price\": 12.8\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Queso Classic, Mild\",\r\n            \"sku\": 12338101,\r\n            \"isTaxable\": false,\r\n            \"ownBrand\": true,\r\n            \"price\": 12.41\r\n        },\r\n        {\r\n            \"itemName\": \"Central Market Mild Peach Salsa\",\r\n            \"sku\": 99828459,\r\n            \"isTaxable\": false,\r\n            \"ownBrand\": true,\r\n            \"price\": 1.16\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Natural Ground Bison\",\r\n            \"sku\": 14064431,\r\n            \"isTaxable\": false,\r\n            \"ownBrand\": true,\r\n            \"price\": 12.52\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Texas Style Unsweet Tea\",\r\n            \"sku\": 77915014,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 7.04\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Original Bacon\",\r\n            \"sku\": 48067887,\r\n            \"isTaxable\": false,\r\n            \"ownBrand\": true,\r\n            \"price\": 7.15\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Cotton Swabs with Paper Sticks\",\r\n            \"sku\": 48426066,\r\n            \"isTaxable\": false,\r\n            \"ownBrand\": true,\r\n            \"price\": 9.72\r\n        },\r\n        {\r\n            \"itemName\": \"Central Market Organics Mushroom Pasta Sauce\",\r\n            \"sku\": 64474859,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 7.12\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Vegetable Medley\",\r\n            \"sku\": 11407191,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 4.81\r\n        },\r\n        {\r\n            \"itemName\": \"Beyond Meat Beyond Beef Plant Based Ground\",\r\n            \"sku\": 99657156,\r\n            \"isTaxable\": false,\r\n            \"ownBrand\": false,\r\n            \"price\": 3.81\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Wild Caught Sockeye Salmon Fillet\",\r\n            \"sku\": 75821377,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 12.43\r\n        }\r\n    ],\r\n    \"coupons\": [\r\n        {\r\n            \"couponName\": \"Brownie Discount\",\r\n            \"appliedSku\": 85294241,\r\n            \"discountPrice\": 0.79\r\n        },\r\n        {\r\n            \"couponName\": \"Tofurky Discount\",\r\n            \"appliedSku\": 61411728,\r\n            \"discountPrice\": 1.01\r\n        },\r\n        {\r\n            \"couponName\": \"Spaghetti Discount\",\r\n            \"appliedSku\": 30532705,\r\n            \"discountPrice\": 1.83\r\n        },\r\n        {\r\n            \"couponName\": \"Seafood Discount\",\r\n            \"appliedSku\": 21411389,\r\n            \"discountPrice\": 1.50\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/subtotalAfterDiscount",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"subtotalAfterDiscount"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Taxable Subtotal After Discounts Fail",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test('taxableSubtotalAfterDiscountStatusSadPath', function(){\r",
+									"    pm.response.to.have.status(400)\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test('taxableSubtotalAfterDiscountResponseSadPath', function(){\r",
+									"    var jsonData = pm.response.json()\r",
+									"    pm.expect(jsonData.detail).to.equal(\"Invalid request content.\")\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"items\": [\r\n        {\r\n            \"price\": 3.61\r\n        },\r\n        {\r\n            \"itemName\": \"Halo Top Vanilla Bean Ice Cream\",\r\n            \"sku\": 95422042,\r\n            \"isTaxable\": false,\r\n            \"ownBrand\": false,\r\n            \"price\": 3.31\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Select Ingredients Creamy Creations Vanilla Bean Ice Cream\",\r\n            \"sku\": 64267055,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 9.83\r\n        },\r\n        {\r\n            \"itemName\": \"Aveeno Daily Moisturizing Body Wash\",\r\n            \"sku\": 12821859,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": false,\r\n            \"price\": 5.11\r\n        },\r\n        {\r\n            \"itemName\": \"Hershey's Chocolate Syrup\",\r\n            \"sku\": 23991994,\r\n            \"isTaxable\": false,\r\n            \"ownBrand\": false,\r\n            \"price\": 9.47\r\n        },\r\n        {\r\n            \"itemName\": \"GoGo squeeZ Applesauce Pouches\",\r\n            \"sku\": 30224576,\r\n            \"isTaxable\": false,\r\n            \"ownBrand\": false,\r\n            \"price\": 7.58\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Organics Unbleached All Purpose Flour\",\r\n            \"sku\": 50338388,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 5.89\r\n        },\r\n        {\r\n            \"itemName\": \"Heritage Ranch by H-E-B Basked Pumpkin Dog Treats\",\r\n            \"sku\": 31001002,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 5.11\r\n        },\r\n        {\r\n            \"itemName\": \"KODI Red Matte Stainless Steel Low Ball Tumbler\",\r\n            \"sku\": 87467463,\r\n            \"isTaxable\": false,\r\n            \"ownBrand\": true,\r\n            \"price\": 1.5\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Artisan Yellow Cheddar Cheese\",\r\n            \"sku\": 40514710,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 11.48\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Sugar Rush Dream Melon\",\r\n            \"sku\": 56037921,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 8.4\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Chocolate Milk\",\r\n            \"sku\": 49057828,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 6.42\r\n        },\r\n        {\r\n            \"itemName\": \"Oroweat Extra Crisp Fork-Split English Muffins\",\r\n            \"sku\": 92374672,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": false,\r\n            \"price\": 2.83\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Organics Frozen Berry Blend\",\r\n            \"sku\": 73354627,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 4.77\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Select Ingredients Unsweetened Coconut Sparkling Water 12 oz Cans\",\r\n            \"sku\": 65290137,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 14.18\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Spaghetti\",\r\n            \"sku\": 30532705,\r\n            \"isTaxable\": false,\r\n            \"ownBrand\": true,\r\n            \"price\": 4.86\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Prime 1 Beef Brisket Steak Burgers, 2 ct\",\r\n            \"sku\": 29846569,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 8.65\r\n        },\r\n        {\r\n            \"itemName\": \"Tofurky\",\r\n            \"sku\": 61411728,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": false,\r\n            \"price\": 8.15\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Select Ingredients Chocolate Hummus\",\r\n            \"sku\": 58267213,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 9.29\r\n        },\r\n        {\r\n            \"itemName\": \"Heinz Tomato Ketchup\",\r\n            \"sku\": 73018836,\r\n            \"isTaxable\": false,\r\n            \"ownBrand\": false,\r\n            \"price\": 12.8\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Queso Classic, Mild\",\r\n            \"sku\": 12338101,\r\n            \"isTaxable\": false,\r\n            \"ownBrand\": true,\r\n            \"price\": 12.41\r\n        },\r\n        {\r\n            \"itemName\": \"Central Market Mild Peach Salsa\",\r\n            \"sku\": 99828459,\r\n            \"isTaxable\": false,\r\n            \"ownBrand\": true,\r\n            \"price\": 1.16\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Natural Ground Bison\",\r\n            \"sku\": 14064431,\r\n            \"isTaxable\": false,\r\n            \"ownBrand\": true,\r\n            \"price\": 12.52\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Texas Style Unsweet Tea\",\r\n            \"sku\": 77915014,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 7.04\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Original Bacon\",\r\n            \"sku\": 48067887,\r\n            \"isTaxable\": false,\r\n            \"ownBrand\": true,\r\n            \"price\": 7.15\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Cotton Swabs with Paper Sticks\",\r\n            \"sku\": 48426066,\r\n            \"isTaxable\": false,\r\n            \"ownBrand\": true,\r\n            \"price\": 9.72\r\n        },\r\n        {\r\n            \"itemName\": \"Central Market Organics Mushroom Pasta Sauce\",\r\n            \"sku\": 64474859,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 7.12\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Vegetable Medley\",\r\n            \"sku\": 11407191,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 4.81\r\n        },\r\n        {\r\n            \"itemName\": \"Beyond Meat Beyond Beef Plant Based Ground\",\r\n            \"sku\": 99657156,\r\n            \"isTaxable\": false,\r\n            \"ownBrand\": false,\r\n            \"price\": 3.81\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Wild Caught Sockeye Salmon Fillet\",\r\n            \"sku\": 75821377,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 12.43\r\n        }\r\n    ],\r\n    \"coupons\": [\r\n        {\r\n            \"couponName\": \"Brownie Discount\",\r\n            \"appliedSku\": 85294241,\r\n            \"discountPrice\": 0.79\r\n        },\r\n        {\r\n            \"couponName\": \"Tofurky Discount\",\r\n            \"appliedSku\": 61411728,\r\n            \"discountPrice\": 1.01\r\n        },\r\n        {\r\n            \"couponName\": \"Spaghetti Discount\",\r\n            \"appliedSku\": 30532705,\r\n            \"discountPrice\": 1.83\r\n        },\r\n        {\r\n            \"couponName\": \"Seafood Discount\",\r\n            \"appliedSku\": 21411389,\r\n            \"discountPrice\": 1.50\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/taxableSubtotalAfterDiscount",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"taxableSubtotalAfterDiscount"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Tax Total Fail",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test('taxTotalStatusSadPath', function(){\r",
+									"    pm.response.to.have.status(400)\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test('taxTotalResponseSadPath', function(){\r",
+									"    var jsonData = pm.response.json()\r",
+									"    pm.expect(jsonData.detail).to.equal(\"Failed to convert 'taxableSubtotalAfterDiscount' with value: 'badInput'\")\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/taxTotal/badInput",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"taxTotal",
+								"badInput"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Grand Total Fail",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test('grandTotalStatusSadPath', function(){\r",
+									"    pm.response.to.have.status(400)\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test('grandTotalResponseSadPath', function(){\r",
+									"    var jsonData = pm.response.json()\r",
+									"    pm.expect(jsonData.detail).to.equal(\"Invalid request content.\")\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"items\": [\r\n        {\r\n            \"price\": 3.61\r\n        },\r\n        {\r\n            \"itemName\": \"Halo Top Vanilla Bean Ice Cream\",\r\n            \"sku\": 95422042,\r\n            \"isTaxable\": false,\r\n            \"ownBrand\": false,\r\n            \"price\": 3.31\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Select Ingredients Creamy Creations Vanilla Bean Ice Cream\",\r\n            \"sku\": 64267055,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 9.83\r\n        },\r\n        {\r\n            \"itemName\": \"Aveeno Daily Moisturizing Body Wash\",\r\n            \"sku\": 12821859,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": false,\r\n            \"price\": 5.11\r\n        },\r\n        {\r\n            \"itemName\": \"Hershey's Chocolate Syrup\",\r\n            \"sku\": 23991994,\r\n            \"isTaxable\": false,\r\n            \"ownBrand\": false,\r\n            \"price\": 9.47\r\n        },\r\n        {\r\n            \"itemName\": \"GoGo squeeZ Applesauce Pouches\",\r\n            \"sku\": 30224576,\r\n            \"isTaxable\": false,\r\n            \"ownBrand\": false,\r\n            \"price\": 7.58\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Organics Unbleached All Purpose Flour\",\r\n            \"sku\": 50338388,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 5.89\r\n        },\r\n        {\r\n            \"itemName\": \"Heritage Ranch by H-E-B Basked Pumpkin Dog Treats\",\r\n            \"sku\": 31001002,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 5.11\r\n        },\r\n        {\r\n            \"itemName\": \"KODI Red Matte Stainless Steel Low Ball Tumbler\",\r\n            \"sku\": 87467463,\r\n            \"isTaxable\": false,\r\n            \"ownBrand\": true,\r\n            \"price\": 1.5\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Artisan Yellow Cheddar Cheese\",\r\n            \"sku\": 40514710,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 11.48\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Sugar Rush Dream Melon\",\r\n            \"sku\": 56037921,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 8.4\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Chocolate Milk\",\r\n            \"sku\": 49057828,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 6.42\r\n        },\r\n        {\r\n            \"itemName\": \"Oroweat Extra Crisp Fork-Split English Muffins\",\r\n            \"sku\": 92374672,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": false,\r\n            \"price\": 2.83\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Organics Frozen Berry Blend\",\r\n            \"sku\": 73354627,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 4.77\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Select Ingredients Unsweetened Coconut Sparkling Water 12 oz Cans\",\r\n            \"sku\": 65290137,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 14.18\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Spaghetti\",\r\n            \"sku\": 30532705,\r\n            \"isTaxable\": false,\r\n            \"ownBrand\": true,\r\n            \"price\": 4.86\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Prime 1 Beef Brisket Steak Burgers, 2 ct\",\r\n            \"sku\": 29846569,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 8.65\r\n        },\r\n        {\r\n            \"itemName\": \"Tofurky\",\r\n            \"sku\": 61411728,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": false,\r\n            \"price\": 8.15\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Select Ingredients Chocolate Hummus\",\r\n            \"sku\": 58267213,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 9.29\r\n        },\r\n        {\r\n            \"itemName\": \"Heinz Tomato Ketchup\",\r\n            \"sku\": 73018836,\r\n            \"isTaxable\": false,\r\n            \"ownBrand\": false,\r\n            \"price\": 12.8\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Queso Classic, Mild\",\r\n            \"sku\": 12338101,\r\n            \"isTaxable\": false,\r\n            \"ownBrand\": true,\r\n            \"price\": 12.41\r\n        },\r\n        {\r\n            \"itemName\": \"Central Market Mild Peach Salsa\",\r\n            \"sku\": 99828459,\r\n            \"isTaxable\": false,\r\n            \"ownBrand\": true,\r\n            \"price\": 1.16\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Natural Ground Bison\",\r\n            \"sku\": 14064431,\r\n            \"isTaxable\": false,\r\n            \"ownBrand\": true,\r\n            \"price\": 12.52\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Texas Style Unsweet Tea\",\r\n            \"sku\": 77915014,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 7.04\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Original Bacon\",\r\n            \"sku\": 48067887,\r\n            \"isTaxable\": false,\r\n            \"ownBrand\": true,\r\n            \"price\": 7.15\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Cotton Swabs with Paper Sticks\",\r\n            \"sku\": 48426066,\r\n            \"isTaxable\": false,\r\n            \"ownBrand\": true,\r\n            \"price\": 9.72\r\n        },\r\n        {\r\n            \"itemName\": \"Central Market Organics Mushroom Pasta Sauce\",\r\n            \"sku\": 64474859,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 7.12\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Vegetable Medley\",\r\n            \"sku\": 11407191,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 4.81\r\n        },\r\n        {\r\n            \"itemName\": \"Beyond Meat Beyond Beef Plant Based Ground\",\r\n            \"sku\": 99657156,\r\n            \"isTaxable\": false,\r\n            \"ownBrand\": false,\r\n            \"price\": 3.81\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Wild Caught Sockeye Salmon Fillet\",\r\n            \"sku\": 75821377,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 12.43\r\n        }\r\n    ],\r\n    \"coupons\": [\r\n        {\r\n            \"couponName\": \"Brownie Discount\",\r\n            \"appliedSku\": 85294241,\r\n            \"discountPrice\": 0.79\r\n        },\r\n        {\r\n            \"couponName\": \"Tofurky Discount\",\r\n            \"appliedSku\": 61411728,\r\n            \"discountPrice\": 1.01\r\n        },\r\n        {\r\n            \"couponName\": \"Spaghetti Discount\",\r\n            \"appliedSku\": 30532705,\r\n            \"discountPrice\": 1.83\r\n        },\r\n        {\r\n            \"couponName\": \"Seafood Discount\",\r\n            \"appliedSku\": 21411389,\r\n            \"discountPrice\": 1.50\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/grandTotal",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"grandTotal"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Receipt Fail",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test('receiptStatusSadPath', function(){\r",
+									"    pm.response.to.have.status(400)\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test('receiptResponseSadPath', function(){\r",
+									"    var jsonData = pm.response.json()\r",
+									"    pm.expect(jsonData.detail).to.equal(\"Invalid request content.\")\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"items\": [\r\n        {\r\n            \"price\": 3.61\r\n        },\r\n        {\r\n            \"itemName\": \"Halo Top Vanilla Bean Ice Cream\",\r\n            \"sku\": 95422042,\r\n            \"isTaxable\": false,\r\n            \"ownBrand\": false,\r\n            \"price\": 3.31\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Select Ingredients Creamy Creations Vanilla Bean Ice Cream\",\r\n            \"sku\": 64267055,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 9.83\r\n        },\r\n        {\r\n            \"itemName\": \"Aveeno Daily Moisturizing Body Wash\",\r\n            \"sku\": 12821859,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": false,\r\n            \"price\": 5.11\r\n        },\r\n        {\r\n            \"itemName\": \"Hershey's Chocolate Syrup\",\r\n            \"sku\": 23991994,\r\n            \"isTaxable\": false,\r\n            \"ownBrand\": false,\r\n            \"price\": 9.47\r\n        },\r\n        {\r\n            \"itemName\": \"GoGo squeeZ Applesauce Pouches\",\r\n            \"sku\": 30224576,\r\n            \"isTaxable\": false,\r\n            \"ownBrand\": false,\r\n            \"price\": 7.58\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Organics Unbleached All Purpose Flour\",\r\n            \"sku\": 50338388,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 5.89\r\n        },\r\n        {\r\n            \"itemName\": \"Heritage Ranch by H-E-B Basked Pumpkin Dog Treats\",\r\n            \"sku\": 31001002,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 5.11\r\n        },\r\n        {\r\n            \"itemName\": \"KODI Red Matte Stainless Steel Low Ball Tumbler\",\r\n            \"sku\": 87467463,\r\n            \"isTaxable\": false,\r\n            \"ownBrand\": true,\r\n            \"price\": 1.5\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Artisan Yellow Cheddar Cheese\",\r\n            \"sku\": 40514710,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 11.48\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Sugar Rush Dream Melon\",\r\n            \"sku\": 56037921,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 8.4\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Chocolate Milk\",\r\n            \"sku\": 49057828,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 6.42\r\n        },\r\n        {\r\n            \"itemName\": \"Oroweat Extra Crisp Fork-Split English Muffins\",\r\n            \"sku\": 92374672,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": false,\r\n            \"price\": 2.83\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Organics Frozen Berry Blend\",\r\n            \"sku\": 73354627,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 4.77\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Select Ingredients Unsweetened Coconut Sparkling Water 12 oz Cans\",\r\n            \"sku\": 65290137,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 14.18\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Spaghetti\",\r\n            \"sku\": 30532705,\r\n            \"isTaxable\": false,\r\n            \"ownBrand\": true,\r\n            \"price\": 4.86\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Prime 1 Beef Brisket Steak Burgers, 2 ct\",\r\n            \"sku\": 29846569,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 8.65\r\n        },\r\n        {\r\n            \"itemName\": \"Tofurky\",\r\n            \"sku\": 61411728,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": false,\r\n            \"price\": 8.15\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Select Ingredients Chocolate Hummus\",\r\n            \"sku\": 58267213,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 9.29\r\n        },\r\n        {\r\n            \"itemName\": \"Heinz Tomato Ketchup\",\r\n            \"sku\": 73018836,\r\n            \"isTaxable\": false,\r\n            \"ownBrand\": false,\r\n            \"price\": 12.8\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Queso Classic, Mild\",\r\n            \"sku\": 12338101,\r\n            \"isTaxable\": false,\r\n            \"ownBrand\": true,\r\n            \"price\": 12.41\r\n        },\r\n        {\r\n            \"itemName\": \"Central Market Mild Peach Salsa\",\r\n            \"sku\": 99828459,\r\n            \"isTaxable\": false,\r\n            \"ownBrand\": true,\r\n            \"price\": 1.16\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Natural Ground Bison\",\r\n            \"sku\": 14064431,\r\n            \"isTaxable\": false,\r\n            \"ownBrand\": true,\r\n            \"price\": 12.52\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Texas Style Unsweet Tea\",\r\n            \"sku\": 77915014,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 7.04\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Original Bacon\",\r\n            \"sku\": 48067887,\r\n            \"isTaxable\": false,\r\n            \"ownBrand\": true,\r\n            \"price\": 7.15\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Cotton Swabs with Paper Sticks\",\r\n            \"sku\": 48426066,\r\n            \"isTaxable\": false,\r\n            \"ownBrand\": true,\r\n            \"price\": 9.72\r\n        },\r\n        {\r\n            \"itemName\": \"Central Market Organics Mushroom Pasta Sauce\",\r\n            \"sku\": 64474859,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 7.12\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Vegetable Medley\",\r\n            \"sku\": 11407191,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 4.81\r\n        },\r\n        {\r\n            \"itemName\": \"Beyond Meat Beyond Beef Plant Based Ground\",\r\n            \"sku\": 99657156,\r\n            \"isTaxable\": false,\r\n            \"ownBrand\": false,\r\n            \"price\": 3.81\r\n        },\r\n        {\r\n            \"itemName\": \"H-E-B Wild Caught Sockeye Salmon Fillet\",\r\n            \"sku\": 75821377,\r\n            \"isTaxable\": true,\r\n            \"ownBrand\": true,\r\n            \"price\": 12.43\r\n        }\r\n    ],\r\n    \"coupons\": [\r\n        {\r\n            \"couponName\": \"Brownie Discount\",\r\n            \"appliedSku\": 85294241,\r\n            \"discountPrice\": 0.79\r\n        },\r\n        {\r\n            \"couponName\": \"Tofurky Discount\",\r\n            \"appliedSku\": 61411728,\r\n            \"discountPrice\": 1.01\r\n        },\r\n        {\r\n            \"couponName\": \"Spaghetti Discount\",\r\n            \"appliedSku\": 30532705,\r\n            \"discountPrice\": 1.83\r\n        },\r\n        {\r\n            \"couponName\": \"Seafood Discount\",\r\n            \"appliedSku\": 21411389,\r\n            \"discountPrice\": 1.50\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
